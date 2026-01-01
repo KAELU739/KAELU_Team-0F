@@ -1,0 +1,8 @@
+{
+  "newsJsonPath": "../../web-page/news.json",
+  "guildId": "1455941764501475464",
+  "newsChannelId": "1455953334187065404",
+  "updateIntervalMinutes": 5,
+  "watchChannel": "1455955375239987291",
+  "uploadChannelId": "1455989434670383246"
+}
