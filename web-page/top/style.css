@@ -1,0 +1,891 @@
+//* ===========================
+   基本設定
+=========================== */
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Segoe UI", sans-serif;
+
+  /* 背景（白フィルター＋ぼかし） */
+  background:
+    linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url("../asset/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  backdrop-filter: blur(8px);
+
+  /* 固定ヘッダー分の余白 */
+  padding-top: 60px;
+}
+
+
+/* ===========================
+   固定ヘッダー
+=========================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* ヘッダー内部レイアウト */
+.top-menu {
+  padding: 16px 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-area:hover {
+  opacity: 0.85;
+}
+
+.logo-img {
+  height: 32px;
+  margin-right: 12px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #444;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #0066cc;
+  text-shadow: 0 0 4px #032446(0, 200, 130, 0.3);
+}
+
+.sns-link {
+  margin-left: 18px;
+  display: inline-flex;
+  align-items: center;
+  transform: translateY(6px);
+}
+
+.sns-icon {
+  height: 24px;
+  transition: 0.2s;
+}
+
+.sns-icon:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 4px rgba(0,0,0,0.3));
+}
+
+.top-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===========================
+   トップ画像
+=========================== */
+.top-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===========================
+   ニュースセクション
+=========================== */
+.news-section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.news-section h2 {
+  font-size: 28px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.news-title {
+  color: #222;
+  text-decoration: none;
+}
+
+.news-title:hover {
+  text-decoration: underline;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-tile {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  text-align: left;
+  transition: 0.2s;
+}
+
+.news-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.author {
+  font-weight: bold;
+  font-size: 16px;
+  color: #222;
+}
+
+.date {
+  font-size: 13px;
+  color: #777;
+}
+
+.news-content {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.news-content a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.news-content a:hover {
+  text-decoration: underline;
+}
+
+.news-content code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.news-image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.file-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.news-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.news-footer {
+  margin-top: auto;
+  text-align: right;
+}
+
+.news-footer a {
+  white-space: nowrap;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.news-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   区切り線
+=========================== */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #ccc, #999, #ccc);
+  margin: 40px 0;
+  opacity: 0.6;
+}
+
+/* ===========================
+   活動内容
+=========================== */
+.about {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  padding: 0 20px;
+  margin: 40px 0 20px;
+  color: #444;
+}
+
+.about-index {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* タイトル */
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #444;
+  margin: 40px 0 20px;
+}
+
+/* 横3つ × 縦に複数行のグリッド */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 横3つ固定 */
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+/* カード本体 */
+.card {
+  background: rgba(255,255,255,0.75);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.25s;
+  backdrop-filter: blur(4px);
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* タイトル（リンク） */
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0066cc;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.card-title:hover {
+  text-decoration: underline;
+}
+
+/* 説明文 */
+.card-desc {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===========================
+   Footer
+=========================== */
+.site-footer {
+  margin-top: 60px;
+  padding: 30px 20px;
+  text-align: center;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.footer-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #0066cc;
+  text-decoration: none;
+  margin: 0 6px;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Discord紹介セクションの横並びレイアウト */
+/* 横並びレイアウト（高さ自動揃え） */
+.discord-intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;   /* ← 高さを自動で揃えるポイント */
+  gap: 40px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* 左側：紹介文ボックス（高さは自動） */
+.discord-message {
+  flex: 1;                         /* ← 横幅を自然に広げる */
+  background: rgba(255,255,255,0.75);
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  backdrop-filter: blur(4px);
+  text-align: center;
+  overflow-y: auto;                /* ← 内容が溢れたらスクロール */
+}
+
+/* 右側：Discordウィジェット（高さ固定） */
+.discord-widget iframe {
+  width: 350px;
+  height: 500px;                   /* ← この高さに左側が自動で揃う */
+  border-radius: 10px;
+}
+
+/* スマホ時は縦並び（既に対応済み） */
+@media (max-width: 900px) {
+  .discord-intro-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .discord-message {
+    width: 100%;
+    max-width: 500px;
+    height: auto;                  /* ← スマホでは高さ固定を解除 */
+  }
+}
+
+.discord-message h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.discord-message p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* セクション全体 */
+.channel-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* タイトル */
+.channel-section .section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* 各チャンネルカード */
+.channel-card {
+  background: rgba(255, 255, 255, 0.75);
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  backdrop-filter: blur(4px);
+  margin-bottom: 25px;
+}
+
+/* チャンネル名（リンク） */
+.channel-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2a4fa3;
+  text-decoration: none;
+}
+
+.channel-title:hover {
+  text-decoration: underline;
+}
+
+/* 説明文 */
+.channel-desc {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Bot紹介セクション */
+.bot-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* Botカード（横並び） */
+.bot-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  backdrop-filter: blur(4px);
+  margin-bottom: 25px;
+}
+
+/* Botアイコン */
+.bot-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Bot内容部分 */
+.bot-content {
+  flex: 1;
+}
+
+/* Bot名（リンク） */
+.bot-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2a4fa3;
+  text-decoration: none;
+}
+
+.bot-title:hover {
+  text-decoration: underline;
+}
+
+/* 説明文 */
+.bot-desc {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* 機能一覧 */
+.bot-features {
+  margin-top: 12px;
+  padding-left: 20px;
+  color: #333;
+}
+
+.bot-features li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+/* スマホ対応 */
+@media (max-width: 700px) {
+  .bot-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bot-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .bot-content {
+    width: 100%;
+  }
+
+  .bot-features {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+}
+
+/* セクション全体 */
+.schedule-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* タイルを縦に並べる */
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* タイル本体 */
+.schedule-tile {
+  background: rgba(255, 255, 255, 0.75);
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  backdrop-filter: blur(4px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.schedule-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* 年の表示 */
+.tile-year {
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+/* 日付 */
+.tile-date {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2a4fa3;
+  margin-bottom: 8px;
+}
+
+/* タイトル */
+.tile-title {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* 説明文 */
+.tile-desc {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* 終了済みは少し薄く */
+.finished-section .schedule-tile {
+  opacity: 0.7;
+}
+
+/* ===== Discord風メッセージ表示 ===== */
+
+.messages-list {
+  background: #ffffff;
+  border: 1px solid #e3e7ef;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  max-height: 600px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* メッセージ1件 */
+.message {
+  display: flex;
+  align-items: flex-start;
+  padding: 14px 10px;
+  border-bottom: 1px solid #eef1f6;
+}
+
+.message:last-child {
+  border-bottom: none;
+}
+
+/* アイコン（Discord風丸アイコン） */
+.message .avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #d0d7e3;
+  margin-right: 12px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* メッセージ本文エリア */
+.message .content-area {
+  flex: 1;
+}
+
+/* 投稿者名 */
+.message .author {
+  font-weight: bold;
+  color: #2d4f7c;
+  font-size: 15px;
+}
+
+/* 投稿日時 */
+.message .timestamp {
+  font-size: 12px;
+  color: #7a8ca5;
+  margin-left: 6px;
+}
+
+/* 本文 */
+.message .content {
+  margin-top: 4px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  white-space: pre-wrap;
+}
+
+/* スレッド開始メッセージ */
+.message .thread {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #e67e22;
+  font-weight: bold;
+}
+
+/* 添付ファイル */
+.message .attachments {
+  margin-top: 6px;
+}
+
+.message .attachments a {
+  color: #4a6fa5;
+  text-decoration: none;
+}
+
+.message .attachments a:hover {
+  color: #2d4f7c;
+}
+
+/* ===== メッセージ送信エリア ===== */
+.message-input-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid #e3e7ef;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* 入力欄のアイコン */
+.input-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* テキスト入力 */
+.message-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #d0d7e3;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+}
+
+.message-input:focus {
+  border-color: #4a6fa5;
+}
+
+/* 送信ボタン */
+.send-button {
+  padding: 10px 16px;
+  background: #4a6fa5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.send-button:hover {
+  background: #2d4f7c;
+}
+
+/* ===== Webhook 設定エリア ===== */
+.webhook-settings {
+  margin-top: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #e3e7ef;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.settings-title {
+  font-size: 18px;
+  color: #4a6fa5;
+  margin-bottom: 10px;
+}
+
+.settings-label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #2d4f7c;
+}
+
+.settings-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid #d0d7e3;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.settings-input:focus {
+  border-color: #4a6fa5;
+}
+
+.settings-save-button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: #4a6fa5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.settings-save-button:hover {
+  background: #2d4f7c;
+}
+
+.input-user-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.input-username {
+  font-size: 13px;
+  color: #4a6fa5;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.loading-status {
+  text-align: center;
+  font-size: 13px;
+  color: #4a6fa5;
+  padding: 4px 0;
+}
+
+
+.chat-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: stretch; /* ★ 高さを揃える */
+}
+
+/* 左側（メッセージ一覧） */
+.messages-section {
+  flex: 1;
+  display: flex;
+}
+
+/* メッセージ一覧の高さを親に合わせる */
+.messages-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* 右側（Discord ウィジェット） */
+.discord-widget {
+  width: 350px;
+  min-width: 350px;
+  display: flex;
+}
+
+/* iframe を親の高さに合わせる */
+.discord-widget iframe {
+  flex: 1;
+  height: 100%; /* ★ 左側と同じ高さになる */
+}
+
+/* ===============================
+   リアクション（白基調）
+   =============================== */
+.reactions-count {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.reaction-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  background: #f3f4f6;        /* 明るいグレー */
+  border-radius: 6px;
+  font-size: 13px;
+  color: #4b5563;             /* 落ち着いた濃いグレー */
+  cursor: pointer;
+  border: 1px solid #e5e7eb;  /* 薄い枠線 */
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.reaction-btn:hover {
+  background: #e5e7eb;        /* 少し濃いグレー */
+  border-color: #d1d5db;
+}
+
+.content404 {
+  flex: 1; /* ここが重要！ */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 縦中央 */
+  align-items: center;     /* 横中央 */
+  text-align: center;
+}
+
+.bodyCenter {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

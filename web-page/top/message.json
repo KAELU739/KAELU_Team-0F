@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1455985171663687734",
+    "author": "_kaelu_",
+    "avatarURL": "https://cdn.discordapp.com/avatars/1321098262945595465/badae4afa14ab1d29398a1b8550b102c.webp?size=64",
+    "timestamp": 1767204315821,
+    "content": "",
+    "reactions": [],
+    "reactionsCount": [],
+    "files": [
+      {
+        "name": "web-chat.png",
+        "url": "https://cdn.discordapp.com/attachments/1455955375239987291/1455985171302973573/web-chat.png?ex=6956b75b&is=695565db&hm=48ff2f6ae5b76354229cba23fb1c4603f33b3ab49b9033ffed5b7a6c40d5c168&",
+        "markdown": "[web-chat.png](https://cdn.discordapp.com/attachments/1455955375239987291/1455985171302973573/web-chat.png?ex=6956b75b&is=695565db&hm=48ff2f6ae5b76354229cba23fb1c4603f33b3ab49b9033ffed5b7a6c40d5c168&)"
+      }
+    ],
+    "isCommand": false,
+    "isThreadMessage": false,
+    "thread": null,
+    "stickers": []
+  }
+]

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Team:0F</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../asset/icon-320.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../asset/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../asset/icon-512.png">
+  </head>
+
+  <body>
+    <header class="top-menu">
+      <a href="../top.html" class="logo-area">
+        <img src="../asset/logo.png" alt="Logo" class="logo-img">
+        <span class="logo-text">Team:0F</span>
+      </a>
+
+      <nav>
+        <a href="../amina.html">AminA</a>
+        <a href="../exadder.html">Exadder</a>
+        <a href="../elpida.html">Elpida</a>
+        <a href="../terraetaqua.html">Terraetaqua</a>
+        <a href="../rapid-omega-rusted.html">Rapid Ω Rusted</a>
+        <a href="../others.html">Others</a>
+
+        <a href="https://x.com/KAELU739" class="sns-link" target="_blank">
+          <img src="../asset/x.png" alt="X" class="sns-icon x-icon">
+        </a>
+        <a href="https://www.youtube.com/@KAELU-y5d" class="sns-link" target="_blank">
+          <img src="../asset/youtube.png" alt="YouTube" class="sns-icon youtube-icon">
+        </a>
+        <a href="https://discord.gg/nNW6JYvsmb" class="sns-link" target="_blank">
+          <img src="../asset/discord.png" alt="Discord" class="sns-icon discord-icon">
+        </a>
+      </nav>
+    </header>
+
+    <!-- ===============================
+         Discordメッセージ表示エリア
+    ================================ -->
+    <main class="chat-main">
+
+      <h2 class="messages-title">連携チャット</h2>
+
+      <div id="loadingStatus" class="loading-status">反映済み</div>
+
+      <section class="chat-wrapper">
+        <section class="messages-section">
+          <div id="messages" class="messages-list">
+            読み込み中...
+          </div>
+        </section>
+
+        <aside class="discord-widget">
+          <iframe src="https://discord.com/widget?id=1455941764501475464&theme=light" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </aside>
+      </section>
+
+      <!-- メッセージ送信エリア -->
+      <div class="message-input-area">
+        <img id="self-avatar" class="input-avatar" src="/asset/default-avatar.png" alt="avatar">
+
+        <div class="input-user-info">
+          <div id="self-name" class="input-username">Web User</div>
+
+          <input
+            type="text"
+            id="messageInput"
+            class="message-input"
+            placeholder="メッセージを入力...">
+        </div>
+
+        <button id="sendButton" class="send-button">送信</button>
+      </div>
+
+      <!-- Webhook 設定エリア -->
+      <div class="webhook-settings">
+        <h3 class="settings-title">Webhook 設定</h3>
+
+        <label class="settings-label">ユーザー名</label>
+        <input type="text" id="webhookName" class="settings-input" placeholder="送信時の表示名">
+
+        <label class="settings-label">アイコン画像をアップロード</label>
+        <input type="file" id="webhookAvatarFile" accept="image/*" class="settings-input">
+
+        
+
+        <button id="saveWebhookSettings" class="settings-save-button">保存</button>
+
+        <button id="resetWebhookSettings" class="settings-save-button" style="background:#d9534f;">
+  リセット
+</button>
+
+      </div>
+
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-title">© 2026 Team:0F</p>
+      <p class="footer-links">
+        <a href="https://docs.google.com/document/d/1ctLtqmmXiWFf1AF2hjnIRZLfHV48AdPXMgaIzfs-h7U/edit?tab=t.0" target="_blank" rel="noopener noreferrer">利用規約</a> |
+        <a href="https://docs.google.com/document/d/1ctLtqmmXiWFf1AF2hjnIRZLfHV48AdPXMgaIzfs-h7U/edit?tab=t.6pnjtwxhahj" target="_blank" rel="noopener noreferrer">プライバシー</a> |
+        <a href="mailto:kaelu739@gmail.com">お問い合わせ</a>
+      </p>
+    </footer>
+
+    <!-- ★ ES Module として app.js を読み込む（これだけでOK） -->
+    <script type="module" src="app.js"></script>
+
+  </body>
+</html>
+
