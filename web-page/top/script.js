@@ -46,28 +46,3 @@ loadNews().then(newsList => {
     container.appendChild(tile);
   });
 });
-
-const loader = document.getElementById("loading-screen");
-
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    loader.classList.add("hide");
-
-    document.body.classList.remove("loading-active");
-    document.body.style.overflow = "";
-
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 600);
-  }, 1200);
-});
-
-loader.addEventListener("click", () => {
-  loader.classList.add("hide");
-
-  document.body.classList.remove("loading-active");
-
-  setTimeout(() => {
-    loader.style.display = "none";
-  }, 600);
-});
