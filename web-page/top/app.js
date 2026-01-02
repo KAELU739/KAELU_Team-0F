@@ -58,11 +58,12 @@ async function sendMessage() {
   messageInput.disabled = true;
 
   try {
-    await fetch("/api/send-webhook", {
+    await fetch("../api/send-webhook", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     });
+
 
     messageInput.value = "";
   } finally {
@@ -139,7 +140,7 @@ function loadWebhookSettings() {
 // メッセージ一覧の読み込み
 // ===============================
 async function loadMessages() {
-  const res = await fetch("/top/message.json");
+  const res = await fetch("../top/message.json");
   const data = await res.json();
 
   messagesContainer.innerHTML = "";
@@ -225,8 +226,9 @@ function scrollToBottom() {
 // ===============================
 // SSE（リアルタイム更新）
 // ===============================
-const evt = new EventSource("/events");
+const evt = new EventSource("../events");
 
 evt.onmessage = () => {
   loadMessages();
+
 };
