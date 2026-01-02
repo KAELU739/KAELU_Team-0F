@@ -91,7 +91,7 @@ saveWebhookSettingsButton.addEventListener("click", () => {
 
   document.getElementById("self-name").textContent = name || "Web User";
   document.getElementById("self-avatar").src =
-    webhookState.avatar || "/web-page/asset/default-avatar.png";
+    webhookState.avatar || "../web-page/asset/default-avatar.png";
 
   alert("Webhook 設定を保存しました");
 });
@@ -108,7 +108,7 @@ resetWebhookSettingsButton.addEventListener("click", () => {
 
   webhookNameInput.value = "";
   document.getElementById("self-name").textContent = "Web User";
-  document.getElementById("self-avatar").src = "/web-page/asset/default-avatar.png";
+  document.getElementById("self-avatar").src = "../web-page/asset/default-avatar.png";
 
   alert("Webhook 設定をリセットしました");
 });
@@ -232,3 +232,4 @@ evt.onmessage = () => {
   loadMessages();
 
 };
+
