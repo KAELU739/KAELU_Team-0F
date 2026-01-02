@@ -14,14 +14,12 @@ const messagesContainer = document.getElementById("messages");
 // ===============================
 let isSending = false;
 
-
 // ===============================
 // 初期化
 // ===============================
 setupWebhookIconUploader();
 loadWebhookSettings();
 loadMessages();
-
 
 // ===============================
 // メッセージ送信
@@ -30,13 +28,13 @@ sendButton.addEventListener("click", sendMessage);
 
 messageInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-    e.preventDefault(); // 改行防止
+    e.preventDefault();
     sendMessage();
   }
 });
 
 async function sendMessage() {
-  if (isSending) return;  // ★ 多重送信完全ブロック
+  if (isSending) return;
   isSending = true;
 
   const content = messageInput.value.trim();
@@ -53,7 +51,6 @@ async function sendMessage() {
     avatar_url: webhookState.avatar || settings.avatar || null
   };
 
-  // ★ UI 側もロック
   sendButton.disabled = true;
   messageInput.disabled = true;
 
@@ -64,16 +61,13 @@ async function sendMessage() {
       body: JSON.stringify(payload)
     });
 
-
     messageInput.value = "";
   } finally {
-    // ★ 送信完了後に解除
     sendButton.disabled = false;
     messageInput.disabled = false;
     isSending = false;
   }
 }
-
 
 // ===============================
 // Webhook 設定の保存
@@ -91,11 +85,10 @@ saveWebhookSettingsButton.addEventListener("click", () => {
 
   document.getElementById("self-name").textContent = name || "Web User";
   document.getElementById("self-avatar").src =
-    webhookState.avatar || "../web-page/asset/default-avatar.png";
+    webhookState.avatar || "../asset/default-avatar.png";
 
   alert("Webhook 設定を保存しました");
 });
-
 
 // ===============================
 // Webhook 設定のリセット
@@ -108,11 +101,10 @@ resetWebhookSettingsButton.addEventListener("click", () => {
 
   webhookNameInput.value = "";
   document.getElementById("self-name").textContent = "Web User";
-  document.getElementById("self-avatar").src = "../web-page/asset/default-avatar.png";
+  document.getElementById("self-avatar").src = "../asset/default-avatar.png";
 
   alert("Webhook 設定をリセットしました");
 });
-
 
 // ===============================
 // Webhook 設定の読み込み
@@ -135,7 +127,6 @@ function loadWebhookSettings() {
   return settings;
 }
 
-
 // ===============================
 // メッセージ一覧の読み込み
 // ===============================
@@ -149,7 +140,6 @@ async function loadMessages() {
     const div = document.createElement("div");
     div.className = "message";
 
-    // ★ スタンプ名（Sticker）
     let stickersHTML = "";
     if (msg.stickers && msg.stickers.length > 0) {
       stickersHTML = `
@@ -159,7 +149,6 @@ async function loadMessages() {
       `;
     }
 
-    // ★ 添付ファイル名
     let attachmentsHTML = "";
     if (msg.files && msg.files.length > 0) {
       const fileNames = msg.files.map(f => f.name);
@@ -170,12 +159,11 @@ async function loadMessages() {
       `;
     }
 
-    // ★ Discord 風リアクション（emoji + count）
     let reactionsCountHTML = "";
     if (msg.reactionsCount && msg.reactionsCount.length > 0) {
-      const parts = msg.reactionsCount.map(r => {
-        return `<div class="reaction-btn">${r.emoji} ${r.count}</div>`;
-      }).join("");
+      const parts = msg.reactionsCount
+        .map(r => `<div class="reaction-btn">${r.emoji} ${r.count}</div>`)
+        .join("");
 
       reactionsCountHTML = `
         <div class="reactions-count">
@@ -184,7 +172,6 @@ async function loadMessages() {
       `;
     }
 
-    // ★ スレッド表示
     let threadHTML = "";
     if (msg.isThreadMessage && msg.thread) {
       threadHTML = `
@@ -214,14 +201,12 @@ async function loadMessages() {
   scrollToBottom();
 }
 
-
 // ===============================
 // スクロールを一番下へ
 // ===============================
 function scrollToBottom() {
   messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
-
 
 // ===============================
 // SSE（リアルタイム更新）
@@ -230,6 +215,5 @@ const evt = new EventSource("../events");
 
 evt.onmessage = () => {
   loadMessages();
-
 };
 
