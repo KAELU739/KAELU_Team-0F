@@ -12,7 +12,7 @@ function loadNews() {
 // ===============================
 loadNews().then(newsList => {
   const container = document.getElementById("news-container");
-  if (!container) return; // 安全対策
+  if (!container) return;
 
   if (!newsList || newsList.length === 0) {
     container.innerHTML = "<p>ニュースがありません。</p>";
