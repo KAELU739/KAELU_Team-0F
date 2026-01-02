@@ -1,11 +1,18 @@
+// ===============================
+// ニュースデータの読み込み
+// ===============================
 function loadNews() {
   return fetch("news.json")
     .then(res => res.json())
     .catch(() => []);
 }
 
+// ===============================
+// ニュースタイルの描画
+// ===============================
 loadNews().then(newsList => {
   const container = document.getElementById("news-container");
+  if (!container) return; // 安全対策
 
   if (!newsList || newsList.length === 0) {
     container.innerHTML = "<p>ニュースがありません。</p>";
